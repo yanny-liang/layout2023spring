@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gen Z Times </title>
+    <style>[v-cloak] { display: none; } img {max-width: 100%;}</style>
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Montserrat font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+         
+    <!-- fontawesome icon -->
+    <script src="https://kit.fontawesome.com/208321d06d.js" crossorigin="anonymous"></script> 
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#menu-button").click(function(){		
+                $("#ham-nav").toggleClass("open");
+            });
+        });
+    </script>
+  </head>
+
+  <body>
+
+    <header>
+        <div></div>
+        
+        <div id="logo">
+            <img src="oval logo.png">
+        </div>
+
+        <div class="navigation" id="ham-nav">
+            <a id="menu-button">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+            <div>
+                <nav id="mobile-nav">
+                    <ul>
+                        <li>
+                            <a href="#"> Home </a>
+                        </li>
+
+                        <li> 
+                            <a href="#"> Politics </a>
+                        </li>
+        
+                        <li>
+                            <a href="#"> Culture </a>
+                        </li>
+
+                        <li>
+                            <a href="#"> Business </a>
+                        </li>
+
+                        <li>
+                            <a href="#"> Science </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="navigation" id="desktop-nav">
+            <!-- desktop navigation -->
+            <nav id="main-nav">
+                <ul >
+                    <li>
+                        <a href="#"> Home </a>
+                    </li>
+
+                    <li> 
+                        <a href="#"> Politics </a>
+                    </li>
+    
+                    <li>
+                        <a href="#"> Culture </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Business </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Science </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="news-stories-list-template" v-cloak>
+            <h1 class="section-headings" id="featured-stories-header">Featured Story</h1>
+    
+            <!-- The Featured Story -->
+            <div class="featured-story">
+                
+                <!-- Story title (linked) -->
+                <h1 class="featured-story-title">
+                    <a v-bind:href="featuredStory.url" class="title">{{ featuredStory.title }}</a>
+                </h1>
+    
+                <div class="article-content">
+                    <!-- Story image -->
+                    <img v-bind:src="featuredStory.image" class="story-image">
+    
+                    <div class="source">
+                        <!-- Story description -->
+                        <p class="description"> {{ featuredStory.description }} </p>
+    
+                        <em>
+                            <!-- Story date -->
+                            <span class="date">Published {{ featuredStory.date }} by </span>
+                            
+                            <!-- Story source (linked) -->
+                            <a v-bind:href="featuredStory.source.url" class="story-source">{{ featuredStory.source.name }}</a>
+                        </em>
+                    </div>
+                </div>
+    
+                <!-- Story content (truncated) -->
+                <!-- <span v-html="featuredStory.content" class="story-preview"></span> -->
+            </div>
+    
+          <!-- Debugging info, you can comment this section out when you don't need it.
+          <pre>The featured story object: {{ featuredStory | json }}</pre> -->
+    
+          <!-- Stories List -->
+          <h1 class="section-headings" id="other-stories-header">Other Stories</h1>
+          <ul class="story-list">
+            <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
+            <li v-for="story in stories">
+                <article>
+                    <!-- Story title (linked) -->
+                    <h1>
+                        <a v-bind:href="story.url" class="title">{{ story.title }}</a>
+                    </h1>
+              
+                    <!-- Story description -->
+                    <p class="description">
+                        {{ story.description }}
+                    </p>
+              
+                    <!-- Story image -->
+                    <figure>
+                        <img v-bind:src="story.image">
+                    </figure>
+              
+                    <!-- Story content (truncated) -->
+                    <div class="content">
+                        <span v-html="story.content"></span>
+                    </div>
+                    
+                    <!-- Story source (linked) -->
+                    <div class="source">
+                        <em>
+                            <!-- Story date -->
+                            <span class="date"> Published {{ story.date }} by </span>
+                            <a v-bind:href="story.source.url">{{ story.source.name }}</a>
+                        </em>
+                    </div>
+                </article>
+            </li>
+          </ul>
+    
+          <!-- Debugging info, you can comment this section out when you don't need it. -->
+          <!-- <pre>The stories array: {{ stories | json }}</pre> -->
+        
+        </div>
+    </main>
+
+    <!-- These scripts load the Vue library, and the actual story content. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
+    
+  </body>
+</html>

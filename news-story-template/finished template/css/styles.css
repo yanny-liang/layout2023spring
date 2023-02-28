@@ -295,6 +295,7 @@ a {
     header{
         display: flex;
         flex-wrap: nowrap;
+        position: absolute;
         padding: 0; 
         justify-content: space-between;
     }
@@ -357,7 +358,6 @@ a {
         /* display: grid; */
         /* grid-template-columns: .7fr 1.1fr 3.3fr 0.7fr; */
         display: block;
-        position: absolute;
         margin: auto;
         max-width: 100%;
         align-items: center;

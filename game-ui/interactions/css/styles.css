@@ -1,0 +1,159 @@
+body {
+    background-image: url(../images/sweet-shop-counter.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    max-width: 50%;
+    margin: auto;
+    background-color: lightgrey;
+    border: 3px solid black;
+    border-radius: 20px;
+    height: 80px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    position: fixed; 
+    bottom: 0; 
+    left: 25%;
+    right: 25%; 
+    
+}
+
+.navbar-button {
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    #order-button{
+        background-color: #FA9DCF;
+    }
+
+    #fry-button { 
+        background-color: #FFB077;
+    }
+
+    #decorate-button { 
+        background-color: #98FF87;
+    }
+
+    .navbar-button:focus {
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-button:hover{
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+.orders-tab {
+    position: fixed; 
+    right: 0;
+    top: 5%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+    .orders {
+        border: 2px solid black; 
+        background-color: #FFF0DF;
+        display: flex; 
+        position: absolute;
+        width: 336px;
+        height: 165px;
+        left: 19px;
+        border-radius: 20px;
+    }
+
+        #order-1{
+            top: 100px;
+        }
+
+        #order-2{
+            top: 290px;
+        }
+
+        #order-3 {
+            top: 480px;
+        }
+
+        .orders img {
+            padding: 5%; 
+        }
+
+            .donut-order { 
+                display: flex;
+                max-height: 165px; 
+            }
+
+            /* Container for the status bar */
+            .status-bar-container {
+                width: 50%;
+                height: 35px; 
+                background-color: #F5F5F5;
+                border: 2px solid black;
+                border-radius: 20px;
+                position: absolute; 
+                bottom: 5%; 
+                right: 2%; 
+                z-index: 0;
+            }
+  
+                /* Progress bar styles */
+                .progress-bar {
+                    position: absolute; 
+                    top: 0; 
+                    left: 0;
+                    border-radius: 20px;
+                    height: 100%;
+                    width: 100%; /* Set initial width to 100% */
+                    background-color: green; /* Set initial background color to green */
+                    animation: progressAnimation 120s linear; /* Define animation for progress bar */
+                    animation-direction: reverse;
+                }
+
+                /* Define keyframes for progress bar animation */
+                @keyframes progressAnimation {
+                    100% {
+                    width: 100%; /* Start with width of 100% */
+                    background-color: green; /* Start with green color */
+                    }
+                    75% {
+                    width: 75%; /* Width decreases to 75% */
+                    background-color: orange; /* Color changes to orange */
+                    }
+                    50% {
+                    width: 50%; /* Width decreases to 50% */
+                    background-color: yellow; /* Color changes to yellow */
+                    }
+                    25% {
+                    width: 25%; /* Width decreases to 25% */
+                    background-color: red; /* Color changes to red */
+                    }
+                    0% {
+                    width: 0%; /* Width decreases to 0% */
+                    background-color: darkred; /* Color changes to dark red */
+                    }
+                }
+
+#credits-btn {
+    position: fixed; 
+    bottom: 0; 
+    right: 0; 
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #fdf6b3;
+}
+    #credits-div {
+        display: none;
+        position: fixed; 
+        bottom: 5%; 
+        right: 0; 
+        background-color: #fdf6b3;
+        padding: 1rem; 
+    }
+        

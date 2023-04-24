@@ -1,0 +1,118 @@
+body {
+    background-image: url(https://img.freepik.com/free-vector/process-making-dough-bakery-factory-flat-illustration_1284-65891.jpg?w=1380&t=st=1682278913~exp=1682279513~hmac=16e3b99e26e7ef2c59e995c7c857680df6f25d3085106e02bcad3450268cec5b);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    max-width: 50%;
+    margin: auto;
+    background-color: lightgrey;
+    border: 3px solid black;
+    border-radius: 20px;
+    height: 80px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    position: fixed; 
+    bottom: 0; 
+    left: 25%;
+    right: 25%; 
+    
+}
+
+.navbar-button {
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    #order-button{
+        background-color: #FA9DCF;
+    }
+
+    #fry-button { 
+        background-color: #FFB077;
+    }
+
+    #decorate-button { 
+        background-color: #98FF87;
+    }
+
+    .navbar-button:focus {
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-button:hover{
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+.orders-tab {
+    position: fixed; 
+    right: 0;
+    top: 5%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+    .orders {
+        border: 2px solid black; 
+        background-color: #FFF0DF;
+        display: flex; 
+        position: absolute;
+        width: 336px;
+        height: 165px;
+        left: 19px;
+        border-radius: 20px;
+    }
+
+        #order-1{
+            top: 100px;
+        }
+
+        #order-2{
+            top: 290px;
+        }
+
+        #order-3 {
+            top: 480px;
+        }
+
+        .orders img {
+            padding: 5%; 
+        }
+
+            .donut-order { 
+                display: flex;
+                max-height: 165px; 
+            }
+
+            /* Container for the status bar */
+            .status-bar-container {
+                width: 50%;
+                height: 35px; 
+                background-color: #F5F5F5;
+                border: 2px solid black;
+                border-radius: 20px;
+                position: absolute; 
+                bottom: 5%; 
+                right: 2%; 
+                z-index: 0;
+            }
+  
+                /* Progress bar styles */
+                .progress-bar {
+                    position: absolute; 
+                    top: 0; 
+                    left: 0;
+                    border-radius: 20px;
+                    height: 100%;
+                    width: 100%; /* Set initial width to 110 */
+                    background-color: green; /* Set initial background color to green */
+                    animation: progressAnimation 120s linear; /* Define animation for progress bar */
+                    animation-direction: reverse;
+                }
+        
